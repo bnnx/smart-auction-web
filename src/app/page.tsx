@@ -20,22 +20,12 @@ export default function Home() {
               O Smart Auction é um portal com centenas de produtos aguardando seu lance
             </h2>
           </div>
-          <button 
-            type="submit"
-            className="bg-emerald-500 rounded-xl h-12 font-medium"
-          >
-            <Link href="/login" className="flex justify-center">
-              Fazer login
-            </Link>
-          </button>
-            <button 
-              type="submit"
-              className="bg-zinc-900 rounded-xl h-12 border-2 border-emerald-500 text-emerald-500 font-medium"
-            >
-              <Link href="/sign-up" className="flex justify-center">
-                Criar uma nova conta
-              </Link>
-            </button>
+          <Link href="/login" className="flex justify-center items-center bg-emerald-500 rounded-xl h-12 font-medium">
+            Fazer login
+          </Link>
+          <Link href="/sign-up" className="flex justify-center items-center bg-zinc-900 rounded-xl h-12 border-2 border-emerald-500 text-emerald-500 font-medium">
+            Criar uma nova conta
+          </Link>
         </div>
       </div>
     </main>
