@@ -1,16 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import hummerPic from "@/resources/images/auction-hummer.png";
-import Input from "@/components/input";
-import Button from "@/components/button";
 import AuthAside from "@/components/auth-aside";
+import hummerPic from "@/resources/images/auction-hummer.png";
+import SignUpForm from "./form";
 
 export const metadata = {
   title: 'Criar conta - Smart Auction',
   description: 'A auction website with smart contracts.',
 }
 
-export default function SignUp() {  
+export default function SignUpPage() {  
   return (
     <main className="flex flex-row min-h-screen">
       <AuthAside/>
@@ -30,36 +29,7 @@ export default function SignUp() {
             <h2 className="font-normal text-gray-500 selection:bg-amber-500 selection:text-white">Digite seus dados para criar uma conta</h2>
           </div>
 
-          <form className="flex flex-col space-y-4">
-            <Input
-              type="text"
-              name="firstName" 
-              placeholder="Primeiro nome"
-            />
-            <Input
-              type="text" 
-              name="lastName" 
-              placeholder="Último nome"
-            />
-            <Input
-              type="email" 
-              name="email" 
-              placeholder="Email"
-            />
-            <Input
-              type="password" 
-              name="password" 
-              placeholder="Senha"
-            />
-            <Input
-              type="password" 
-              name="confirmPassword" 
-              placeholder="Confirme sua senha"
-            />
-            <Button
-              text="Criar conta"
-            />
-          </form>
+          <SignUpForm/>
 
           <p className="text-center pt-4 text-gray-500 font-normal selection:bg-amber-500 selection:text-white">
             Já tem uma conta?{" "}
@@ -70,6 +40,7 @@ export default function SignUp() {
               Entrar
             </Link>
           </p>
+          
         </div>
       </div>
     </main>

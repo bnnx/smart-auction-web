@@ -5,13 +5,14 @@ import Button from "@/components/button";
 import vectorPic from "@/resources/images/vector.jpg";
 import hummerPic from "@/resources/images/auction-hummer.png";
 import AuthAside from "@/components/auth-aside";
+import LoginForm from "./form";
 
 export const metadata = {
   title: 'Login - Smart Auction',
   description: 'A auction website with smart contracts.',
 }
 
-export default function Login() {
+export default function LoginPage() {
   return (
     <main className="flex flex-row min-h-screen">
       <AuthAside/>
@@ -31,27 +32,7 @@ export default function Login() {
             <h2 className="font-normal text-gray-500 selection:bg-amber-500 selection:text-white">Digite seus dados para acessar o portal</h2>
           </div>
 
-          <form className="flex flex-col space-y-4">
-            <Input 
-              type="email" 
-              name="email" 
-              placeholder="Email"
-            />
-            <Input 
-              type="password" 
-              name="password" 
-              placeholder="Senha"
-            />
-            <Link
-              href="/forgot-password"
-              className="hover:underline text-end text-white selection:bg-amber-500 selection:text-white"
-            >
-              Esqueceu sua senha?
-            </Link>
-            <Button
-              text="Entrar"
-            />
-          </form>
+          <LoginForm/>
 
           <p className="text-center pt-4 text-gray-500 font-normal selection:bg-amber-500 selection:text-white">
             Ainda não tem conta?{" "}

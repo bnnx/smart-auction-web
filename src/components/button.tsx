@@ -1,7 +1,9 @@
+import { FormEvent } from "react";
+
 const defaultButtonClass = "bg-emerald-500 rounded-xl h-12";
 
 interface Props {
-  handleSubmit?: () => void;
+  handleSubmit?: (event: FormEvent<HTMLButtonElement>) => void;
   type?: "submit" | "button" | "reset" ;
   text: string;
   customClass?: string;
