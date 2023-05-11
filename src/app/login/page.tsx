@@ -1,6 +1,10 @@
 import Image from "next/image"
 import Link from "next/link"
-import vectorPic from '../../resources/images/vector.jpg';
+import Input from "@/components/input";
+import Button from "@/components/button";
+import vectorPic from "@/resources/images/vector.jpg";
+import hummerPic from "@/resources/images/auction-hummer.png";
+import AuthAside from "@/components/auth-aside";
 
 export const metadata = {
   title: 'Login - Smart Auction',
@@ -10,15 +14,17 @@ export const metadata = {
 export default function Login() {
   return (
     <main className="flex flex-row min-h-screen">
-      <aside className="flex bg-white w-0 md:w-1/2 lg:w-3/5 items-center justify-center">
-        <Image 
-          src={vectorPic}
-          alt="Image of an auction"
-          className="p-16 2xl:max-w-screen-lg"
-        />
-      </aside>
+      <AuthAside/>
       <div className="flex flex-col w-screen md:w-1/2 lg:w-2/5 items-center justify-center">
         <div className="w-80">
+
+          <div className="flex pb-4 justify-center">
+            <Image 
+              src={hummerPic}
+              alt="Image of an auction hammer"
+              className="object-contain w-28 h-32"
+            />
+          </div>
 
           <div className="pb-4 text-center">
             <h1 className="font-bold text-white text-xl selection:bg-amber-500">Bem-vindo de volta! 👋</h1>
@@ -26,17 +32,15 @@ export default function Login() {
           </div>
 
           <form className="flex flex-col space-y-4">
-            <input 
+            <Input 
               type="email" 
               name="email" 
               placeholder="Email"
-              className="bg-zinc-950 placeholder-gray-500 rounded-xl h-12 p-4 outline-0"
             />
-            <input 
+            <Input 
               type="password" 
               name="password" 
               placeholder="Senha"
-              className="bg-zinc-950 placeholder-gray-500 rounded-xl h-12 p-4 outline-0"
             />
             <Link
               href="/forgot-password"
@@ -44,12 +48,9 @@ export default function Login() {
             >
               Esqueceu sua senha?
             </Link>
-            <button 
-              type="submit"
-              className="bg-emerald-500 rounded-xl h-12"
-            >
-              Entrar
-            </button>
+            <Button
+              text="Entrar"
+            />
           </form>
 
           <p className="text-center pt-4 text-gray-500 font-normal selection:bg-amber-500 selection:text-white">
