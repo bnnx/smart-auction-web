@@ -4,7 +4,7 @@ import SignUpForm from "./form";
 import AuthHeader from "@/components/auth-header";
 
 export const metadata = {
-  title: 'Criar conta - Smart Auction',
+  title: 'Cadastro - Smart Auction',
   description: 'A auction website with smart contracts.',
 }
 
@@ -15,7 +15,7 @@ export default function SignUpPage() {
       <div className="flex flex-col w-screen md:w-1/2 lg:w-2/5 items-center justify-center">
         <div className="w-80">
           <AuthHeader
-            title="Olá! 👋"
+            title="Crie sua conta! 📋"
             subtitle="Digite seus dados para criar uma conta"
           />
           <SignUpForm/>

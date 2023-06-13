@@ -14,7 +14,7 @@ export default function LoginPage() {
       <AuthAside/>
       <div className="flex flex-col w-screen md:w-1/2 lg:w-2/5 items-center justify-center">
         <div className="w-80">
-          <AuthHeader title="Bem-vindo de volta! 👋" subtitle="Digite seus dados para acessar o portal"/>
+          <AuthHeader title="Olá novamente! 👋" subtitle="Digite seus dados para acessar o portal"/>
           <LoginForm/>
           <p className="text-center pt-4 text-gray-500 font-normal selection:bg-amber-500 selection:text-white">
             Ainda não tem conta?{" "}

@@ -2,7 +2,7 @@ import Link from "next/link";
 import AuthAside from "@/components/auth-aside";
 import AuthHeader from "@/components/auth-header";
 
-export default function Welcome() {
+export default function LobbyPage() {
   return (
     <main className="flex flex-row min-h-screen">
       <AuthAside/>
