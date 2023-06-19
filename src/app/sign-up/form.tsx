@@ -2,6 +2,8 @@
 
 import Button from "@/components/button";
 import Input from "@/components/input";
+import { api } from "@/services/api";
+import { AxiosError } from "axios";
 import { FormEvent } from "react";
 
 export default function SignUpForm() {
@@ -9,7 +11,7 @@ export default function SignUpForm() {
     return (target.elements.namedItem(name) as HTMLInputElement).value
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const target = event.currentTarget
     const body = {
@@ -17,10 +19,16 @@ export default function SignUpForm() {
       lastName: getInputValue({ target, name: 'lastName' }),
       email: getInputValue({ target, name: 'email' }),
       password: getInputValue({ target, name: 'password' }),
-      passwordConfirmation: getInputValue({ target, name: 'passwordConfirmation' }),
     }
-    // CHAMA A API
-    console.log('dados cadastro: ', body)
+    try {
+      await api.post('/users', body)
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        alert(error.response?.data.message)
+      } else {
+        alert('Ocorreu um erro inesperado, tente novamente!')
+      }
+    }
   }
 
   return (
